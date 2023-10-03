@@ -5,9 +5,14 @@
 @import 'navbar.css';
 
 /* Header */
-
 @import 'header.css';
 
-/* Overlay */
+/* About Section */
+@import 'about.css';
 
+/* Overlay */
 @import 'overlay.css';
+
+/* Carousel */
+@import 'owl.theme.default.min.css';
+@import 'owl.carousel.min.css';
