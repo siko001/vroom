@@ -145,6 +145,7 @@
 }
 
 .item__image img {
+	object-fit: cover;
 	border-radius: 3px;
 }
 .item__title {
@@ -190,6 +191,6 @@
 	}
 
 	.item {
-		width: 100%;
+		width: 90%;
 	}
 }

@@ -118,27 +118,31 @@
     <section id="about-us">
         <div class="about-us__main-container">
             <div class="main-container__background">
-                <div class="main-container__left"> </div>
-                <div class="main-container__right"></div>
+                <div class="main-container__left">
+                    <div class="text__image">
+                        <img src="<?= get_theme_file_uri() . '/assets/images/pexels-erik-mclean-7629183.jpg' ?>">
+                    </div>
+                </div>
+                <div class="main-container__right">
+                    <div class="text__box">
+                        <h5 class="box__section custom-font font-lighter">ABOUT US</h5>
+
+                        <h2 class="box__title custom-font"> Welcome to Rent-A-<span class="blue">Vroom</span></h2>
+                        <br>
+                        <p class="box__para custom-font"> Malta's Mediterranean gem. <strong>Rent-A-<span class="blue">Vroom</span> </strong> your Maltese adventure. Explore in style with our well-maintained fleet and discover paradise around every bend</p>
+                        <br>
+                        <p class="box__para custom-font">Welcome to our sports car rental company, where <span class="blue"><strong>speed</strong></span>, style, and exhilaration unite. Our fleet boasts a selection of high-performance vehicles, from sleek roadsters to <span class="blue"><strong>powerful</strong></span> supercars. Whether it's a special occasion or simply a desire for <span class="blue"><strong>thrill</strong></span>, we put you in the driver's seat of your dream ride. Experience the rush of the open road as you command these precision-<span class="blue"><strong>engineered</strong></span> machines. Your journey begins with us, where every mile is a symphony of power and <span class="blue"><strong>luxury</strong></span></p>
+                        <br>
+                        <br>
+                        <button class="custom-font about-btn">Search Vehicles</button>
+                    </div>
+                </div>
 
             </div>
-            <div class="main-container__text">
-                <div class="text__image">
-                    <img src="<?= get_theme_file_uri() . '/assets/images/pexels-erik-mclean-7629183.jpg' ?>">
-                </div>
-                <div class="text__box">
-                    <h5 class="box__section custom-font font-lighter">ABOUT US</h5>
-
-                    <h2 class="box__title custom-font"> Welcome to Rent-A-<span class="blue">Vroom</span></h2>
-                    <br>
-                    <p class="box__para custom-font"> Malta's Mediterranean gem. <strong>Rent-A-<span class="blue">Vroom</span> </strong> your Maltese adventure. Explore in style with our well-maintained fleet and discover paradise around every bend</p>
-                    <br>
-                    <p class="box__para custom-font">Welcome to our sports car rental company, where <span class="blue"><strong>speed</strong></span>, style, and exhilaration unite. Our fleet boasts a selection of high-performance vehicles, from sleek roadsters to <span class="blue"><strong>powerful</strong></span> supercars. Whether it's a special occasion or simply a desire for <span class="blue"><strong>thrill</strong></span>, we put you in the driver's seat of your dream ride. Experience the rush of the open road as you command these precision-<span class="blue"><strong>engineered</strong></span> machines. Your journey begins with us, where every mile is a symphony of power and <span class="blue"><strong>luxury</strong></span></p>
-                    <br>
-                    <br>
-                    <button class="custom-font about-btn">Search Vehicles</button>
-                </div>
-            </div>
+            <!-- <div class="main-container__text">
+               
+             
+            </div> -->
         </div>
     </section>
 
