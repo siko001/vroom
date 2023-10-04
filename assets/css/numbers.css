@@ -1,0 +1,79 @@
+#numbers .container {
+	width: 100%;
+	/* Maybe remover the on on the bottom? */
+}
+
+#numbers .container .background {
+	width: 100%;
+	height: 100%;
+	display: flex;
+}
+
+#numbers .container .left__background {
+	background: #007bff50;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex: 0.6;
+}
+#numbers .container .right__background {
+	padding: 100px 100px 100px 0;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex: 2;
+}
+
+#numbers .container .number__container {
+	gap: 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#numbers .container .number__container .number {
+	height: 100%;
+	font-size: 2.5rem;
+}
+
+.number__text {
+	width: 45%;
+	font-size: 1rem;
+	letter-spacing: 0.7px;
+	line-height: 1.5rem;
+	overflow: hidden;
+}
+
+@media screen and (max-width: 1000px) {
+	#numbers .container .background {
+		display: flex;
+		flex-direction: column;
+	}
+
+	#numbers .container .left__background {
+		padding: 50px 0 30px;
+		background: none;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	#numbers .container .right__background {
+		gap: 60px;
+		padding: 30px 0 50px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.number__text {
+		font-size: 1.5rem;
+		letter-spacing: 0.8px;
+		line-height: 1.5rem;
+		overflow: hidden;
+	}
+	#numbers .container .number__container .number {
+		height: 100%;
+		font-size: 3rem;
+	}
+}

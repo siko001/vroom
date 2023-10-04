@@ -1,4 +1,6 @@
 <?php get_header() ?>
+
+<!-- ANimate -->
 <div class="header">
     <div id="parallax-box">
         <img alt="Picture Of Car" class="header__image " src="<?php header_image(); ?>" width="<?php echo absint(get_custom_header()->width); ?>" height="<?php echo absint(get_custom_header()->height); ?>">
@@ -91,7 +93,7 @@
 
 <!-- Main Content -->
 <main>
-    <!-- Rentals Section -->
+    <!-- Rentals Section Animate-->
     <section id="rentals">
         <div class="section__heading">
             <h4 class="custom-font mini-heading">what we offer</h4>
@@ -114,7 +116,7 @@
     <!-- End Rental Section  -->
 
 
-    <!-- About us Section -->
+    <!-- About us Section ANimate-->
     <section id="about-us">
         <div class="about-us__main-container">
             <div class="main-container__background">
@@ -145,9 +147,186 @@
             </div> -->
         </div>
     </section>
-
-    <br><br><br><br><br>
     <!-- End About Us Section -->
+
+    <!-- Services Section  to (*) make dynamic (*) AND ANIMATE-->
+    <section id="services">
+        <div class="section__heading">
+            <h4 class="custom-font mini-heading">Services</h4>
+            <h2 class="custom-font main-heading ">Exclusive Services</h2>
+        </div>
+        <div class="container">
+            <div class="service-container">
+                <div class="services__logo">logo</div>
+                <div class="services__title custom-font">title</div>
+                <div class="services__para custom-font font-lighter">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate illum provident asperiores modi, facere quasi veniam, ut explicabo et voluptates, at doloribus! Culpa, velit veritatis.</div>
+            </div>
+            <div class="service-container">
+                <div class="services__logo">logo</div>
+                <div class="services__title custom-font">title</div>
+                <div class="services__para custom-font font-lighter">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate illum provident asperiores modi, facere quasi veniam, ut explicabo et voluptates, at doloribus! Culpa, velit veritatis.</div>
+            </div>
+            <div class="service-container">
+                <div class="services__logo">logo</div>
+                <div class="services__title custom-font">title</div>
+                <div class="services__para custom-font font-lighter">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate illum provident asperiores modi, facere quasi veniam, ut explicabo et voluptates, at doloribus! Culpa, velit veritatis.</div>
+            </div>
+            <div class="service-container">
+                <div class="services__logo">logo</div>
+                <div class="services__title custom-font">title</div>
+                <div class="services__para custom-font font-lighter">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate illum provident asperiores modi, facere quasi veniam, ut explicabo et voluptates, at doloribus! Culpa, velit veritatis.</div>
+            </div>
+        </div>
+    </section>
+    <!-- End Services Section -->
+
+    <!-- Image heading to (*) make dynamic (*) AND ANIMATE-->
+    <div class="image-container">
+        <div class="left-slanting-line-img" style="position:absolute;left:-800px;top:-100px;"></div>
+        <img src="<?= get_theme_file_uri() ?>/assets/images/pexels-mike-bird-2365572.jpg">
+
+        <h2 class="center-image__heading custom-font">Join Malta's Exclusive Rental
+            <br> <button class="heading-button">Join Now</button>
+        </h2>
+    </div>
+    <!-- Image heading end -->
+
+
+    <!-- Testimonials To (*)Make Dynamic (*) AND ANIMATE -->
+    <section id="testimonials">
+        <div class="section__heading">
+            <h4 class="custom-font mini-heading">Testimonials</h4>
+            <h2 class="custom-font main-heading ">Happy Clients</h2>
+        </div>
+        <div class="carousel-container">
+            <div class="owl-carousel owl-theme">
+
+                <div class="item">
+                    <div class="testimonial__photo">
+
+                    </div>
+                    <p class="testimonial__para custom-font"> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque similique error accusantium deserunt voluptates modi a mollitia dicta dolorem. Sequi.</p>
+                    <h3 class="testimonial__name custom-font font-light"> Name Bla</h3>
+                    <h4 class="testimonial__position custom-font blue">position</h4>
+                </div>
+
+                <div class="item">
+                    <div class="testimonial__photo">
+
+                    </div>
+                    <p class="testimonial__para custom-font"> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque similique error accusantium deserunt voluptates modi a mollitia dicta dolorem. Sequi.</p>
+                    <h3 class="testimonial__name custom-font font-light"> Name Bla</h3>
+                    <h4 class="testimonial__position custom-font blue">position</h4>
+                </div>
+
+                <div class="item">
+                    <div class="testimonial__photo">
+
+                    </div>
+                    <p class="testimonial__para custom-font"> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque similique error accusantium deserunt voluptates modi a mollitia dicta dolorem. Sequi.</p>
+                    <h3 class="testimonial__name custom-font font-light"> Name Bla</h3>
+                    <h4 class="testimonial__position custom-font blue">position</h4>
+                </div>
+
+                <div class="item">
+                    <div class="testimonial__photo">
+
+                    </div>
+                    <p class="testimonial__para custom-font"> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque similique error accusantium deserunt voluptates modi a mollitia dicta dolorem. Sequi.</p>
+                    <h3 class="testimonial__name custom-font font-light"> Name Bla</h3>
+                    <h4 class="testimonial__position custom-font blue">position</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Start Blog to (*)MAKE DYNAMIC (*) AND ANIMATE -->
+    <section id="blog">
+        <div class="section__heading">
+            <h4 class="custom-font mini-heading">Blog</h4>
+            <h2 class="custom-font main-heading ">Recent Blog</h2>
+        </div>
+
+        <div class="blog__container">
+            <div class="blog__post">
+                <div class="post__img">
+                    <img src="<?php echo get_theme_file_uri() ?>/assets/images/pexels-mike-bird-2365572.jpg" alt="">
+                </div>
+                <div class="post__info custom-font blue">
+                    <div>date</div>
+                    <div><i class="fa-regular fa-message"></i> Commenter</div>
+                </div>
+                <div class="post__title custom-font ">Why Lead Generation is Key for Business Growth</div>
+                <div class="post__link">
+                    <button>Read More</button>
+                </div>
+            </div>
+            <div class="blog__post">
+                <div class="post__img">
+                    <img src="<?php echo get_theme_file_uri() ?>/assets/images/pexels-erik-mclean-7629183.jpg" alt="">
+                </div>
+                <div class="post__info custom-font blue">
+                    <div>date</div>
+                    <div><i class="fa-regular fa-message"></i> Commenter</div>
+                </div>
+                <div class="post__title custom-font ">Why Lead Generation is Key for Business Growth</div>
+                <div class="post__link">
+                    <button>Read More</button>
+                </div>
+            </div>
+            <div class="blog__post">
+                <div class="post__img"><img src="<?php echo get_theme_file_uri() ?>/assets/images/pexels-mike-bird-2365572.jpg" alt=""></div>
+                <div class="post__info custom-font blue">
+                    <div>date</div>
+                    <div><i class="fa-regular fa-message"></i> Commenter</div>
+                </div>
+                <div class="post__title custom-font ">Why Lead Generation is Key for Business Growth</div>
+                <div class="post__link custom-font">
+                    <button>Read More</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="numbers">
+        <div class="container">
+            <div class="background">
+                <div class="left__background">
+                    <div class="number__container custom-font">
+                        <div class="number blue">20</div>
+                        <div class="number__text font-light">
+                            Luxurious
+                            Sports-Cars
+                        </div>
+                    </div>
+                </div>
+                <div class="right__background">
+                    <div class="number__container custom-font">
+                        <div class="number blue">100+</div>
+                        <div class="number__text font-light">
+                            Pick-Ups
+                            Drop-offs
+                        </div>
+                    </div>
+                    <div class="number__container custom-font">
+                        <div class="number blue">10</div>
+                        <div class="number__text font-light">
+                            Exclusive
+                            Personal
+                        </div>
+                    </div>
+                    <div class="number__container custom-font">
+                        <div class="number blue">50+</div>
+                        <div class="number__text font-light">
+                            Upgrades
+                            Avaliable
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
 </main>
 
 

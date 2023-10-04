@@ -67,6 +67,7 @@ main {
 }
 
 .section__heading {
+	text-align: center;
 	display: flex;
 	justify-content: center;
 	flex-direction: column;
@@ -96,6 +97,20 @@ main {
 	z-index: 0;
 }
 
+.left-slanting-line-img {
+	content: '';
+	width: 100%;
+	height: 500px;
+	background-color: #01d28e;
+	position: relative;
+	z-index: 0;
+	-webkit-transform: skewY(-4deg);
+	-moz-transform: skewY(-4deg);
+	-ms-transform: skewY(-4deg);
+	-o-transform: skewY(-4deg);
+	transform: skewY(-40deg);
+}
+
 .right-slanting-line {
 	-webkit-transform: skewY(-4deg);
 	-moz-transform: skewY(-4deg);
@@ -114,6 +129,10 @@ main {
 
 .blue {
 	color: #1089ff;
+}
+
+.green {
+	color: #01d28e;
 }
 
 strong {

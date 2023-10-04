@@ -1,0 +1,32 @@
+#testimonials .section__heading {
+	margin: 100px 0;
+}
+
+#testimonials .item {
+	align-items: center;
+}
+
+.testimonial__photo {
+	margin: 20px 0 10px;
+	border-radius: 60px;
+	height: 120px;
+	width: 120px;
+	border: 1px solid black;
+}
+.testimonial__photo img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.testimonial__para {
+	width: 80%;
+	margin-bottom: 10px;
+}
+.testimonial__name {
+	font-weight: 600;
+}
+.testimonial__position {
+	font-weight: 300;
+	margin-bottom: 30px;
+}

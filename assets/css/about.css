@@ -74,6 +74,7 @@
 
 @media screen and (max-width: 1025px) {
 	.about-us__main-container {
+		height: auto;
 		position: relative;
 	}
 	.about-us__main-container .main-container__background {

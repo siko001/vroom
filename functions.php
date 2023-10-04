@@ -35,14 +35,21 @@ add_action("after_setup_theme", "rentAVroom_theme_setup");
 //Register Custom Css
 function rentAVroom_register_styles() {
     //main css contains all css files
-
     wp_enqueue_style("navbar_style", get_theme_file_uri() . "/assets/css/navbar.css");
     wp_enqueue_style("about_setion_style", get_theme_file_uri() . "/assets/css/about.css");
     wp_enqueue_style("header_style", get_theme_file_uri() . "/assets/css/header.css");
     wp_enqueue_style("overlay_style", get_theme_file_uri() . "/assets/css/overlay.css");
     wp_enqueue_style("reset_style", get_theme_file_uri() . "/assets/css/resets.css");
+    wp_enqueue_style("service_style", get_theme_file_uri() . "/assets/css/services.css");
+    wp_enqueue_style("center_style", get_theme_file_uri() . "/assets/css/center-image.css");
     wp_enqueue_style("owl-theme", get_theme_file_uri() . "/assets/css/owl.theme.default.min.css");
     wp_enqueue_style("carosel_style", get_theme_file_uri() . "/assets/css/owl.carousel.min.css");
+    wp_enqueue_style("testimonials_style", get_theme_file_uri() . "/assets/css/testimonials.css");
+    wp_enqueue_style("numbers_style", get_theme_file_uri() . "/assets/css/numbers.css");
+    wp_enqueue_style("blog_style", get_theme_file_uri() . "/assets/css/blog.css");
+
+    wp_enqueue_style("footer_style", get_theme_file_uri() . "/assets/css/footer.css");
+
 
     //Font Package
     wp_enqueue_style("font_import", "https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&amp;display=swap");

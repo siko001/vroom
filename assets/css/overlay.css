@@ -28,6 +28,7 @@
 
 .overlay .navbar__menu {
 	font-size: 1.5rem;
+	gap: 25px;
 	display: flex;
 	flex-direction: column;
 }
