@@ -1,22 +1,27 @@
 jQuery(document).ready(function ($) {
 	//Give the navbar the active color
 
-	//Check to see if url ends with "#home"
-	function isHomePage() {
+	function setActiveNavLink() {
 		const url = window.location.href;
-		return url.endsWith('#home') || url === window.location.origin + '/';
-	}
-	// Add 'current-menu-item' class to the 'Home' menu item when the page loads
-	if (isHomePage()) {
-		$('.navbar__menu .menu-item a[href="#home"]').parent('li').addClass('current-menu-item');
-	}
+		const fragmentIdentifier = url.split('#')[1];
 
-	$('.navbar__menu li').click(function () {
 		// Remove the 'current-menu-item' class from all menu items
 		$('.navbar__menu li').removeClass('current-menu-item');
-		// Add the 'current-menu-item' class to the clicked link's parent li
-		$(this).addClass('current-menu-item');
+
+		// Add the 'current-menu-item' class to the corresponding link
+		if (fragmentIdentifier) {
+			const matchingLink = $('.navbar__menu .menu-item a[href="#' + fragmentIdentifier + '"]');
+			matchingLink.parent('li').addClass('current-menu-item');
+		}
+	}
+
+	// Call the function to set the active link on page load
+	$(document).ready(function () {
+		setActiveNavLink();
 	});
+
+	// Listen to changes in the URL hash (e.g., when the user clicks on a link with a fragment identifier)
+	window.addEventListener('hashchange', setActiveNavLink);
 
 	// Open the overlay
 	$('.mobile-nav__menu').click(() => {

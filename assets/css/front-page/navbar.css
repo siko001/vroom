@@ -28,7 +28,7 @@ nav {
 }
 
 .current-menu-item a {
-	color: #01d28e;
+	color: #01d28e !important;
 }
 
 @media screen and (max-width: 1000px) {

@@ -10,7 +10,7 @@
 <body>
     <nav>
         <div class="navbar">
-            <div class="navbar__logo">
+            <div id="nav-logo" class="navbar__logo">
                 <?php
                 $custom_logo_id = get_theme_mod("custom_logo");
                 $logo = wp_get_attachment_image_src($custom_logo_id, "full");

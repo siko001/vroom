@@ -1,15 +1,36 @@
-<?php get_header() ?>
+<?php get_header();
 
-<!-- ANimate -->
+// Content for the header
+$header_text = get_theme_mod("page_header");
+
+$front_page_image_id = get_theme_mod('about_section_image');
+$mid_page_img = get_theme_mod("mid_page_image");
+
+// Get the customized about section paragraph
+$top_about_paragraph = get_theme_mod('about_section_top_paragraph');
+$bottom_about_paragraph = get_theme_mod('about_section_bottom_paragraph');
+
+//mid-page image paragraph
+$mid_page_image_paragraph = get_theme_mod('mid_page_image_paragraph');
+
+
+// Apply the [blue] shortcode to the content
+$top_about_paragraph = do_shortcode($top_about_paragraph);
+$bottom_about_paragraph = do_shortcode($bottom_about_paragraph);
+$header_text = do_shortCode($header_text);
+$mid_page_image_paragraph = do_shortcode($mid_page_image_paragraph);
+?>
+
 <div class="header">
     <div id="parallax-box">
         <img alt="Picture Of Car" class="header__image " src="<?php header_image(); ?>" width="<?php echo absint(get_custom_header()->width); ?>" height="<?php echo absint(get_custom_header()->height); ?>">
 
-        <div class="center parallax__inside">
-            <h1 class="custom-font"> Fast & Easy Way To Rent A Car</h1>
+        <div class="center parallax__inside" id="header-text">
+            <h1 class="custom-font">
+                <?php echo $header_text ?></h1>
             <br>
             <p class="custom-font sub-heading">
-                A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts
+                <?= $top_about_paragraph  ?>
             </p>
             <br>
             <div class="video">
@@ -29,7 +50,7 @@
 <div class="angled-div">
     <div class="container">
         <div class="container__main">
-            <div class="left">
+            <div id="form-container" class="left">
 
                 <form method="POST" action="#">
                     <h2 class="title custom-font">Make Your Trip</h2>
@@ -67,7 +88,7 @@
             </div>
             <div class="right">
                 <div class="right__text">
-                    <h3 class="custom-font font-light">Better Way to Rent Your Perfect Cars</h3>
+                    <h3 class="custom-font font-light">Better Way to Rent Your Luxurious Cars</h3>
                 </div>
                 <div class="right__logos">
                     <div class="logo__container">
@@ -80,11 +101,11 @@
                     </div>
                     <div class="logo__container">
                         <div class="logo"><i class="fa-solid fa-car"></i></div>
-                        <div class="logo__text font-light">Reserve Your Rental Car</div>
+                        <div class="logo__text font-light">Reserve Your Car</div>
                     </div>
                 </div>
                 <div class="right-btn">
-                    <button>Reserve Your Perfect Car</button>
+                    <button>Reserve Your Car</button>
                 </div>
             </div>
         </div>
@@ -99,18 +120,20 @@
             <h4 class="custom-font mini-heading">what we offer</h4>
             <h2 class="custom-font main-heading">Featured Vehicles</h2>
         </div>
-
-
-
-        <div class="carousel-container">
+        <div id="carousel-container" class="carousel-container">
             <div class="owl-carousel owl-theme">
 
                 <?php get_template_part("/template-parts/rentals") ?>
 
             </div>
         </div>
-
-        <div class="left-slanting-line" style="top:-300px"></div>
+        <div>
+            <br>
+            <br>
+            <br>
+            <br>
+        </div>
+        <!-- <div class="left-slanting-line" style="top:-300px"></div> -->
 
     </section>
     <!-- End Rental Section  -->
@@ -122,18 +145,22 @@
             <div class="main-container__background">
                 <div class="main-container__left">
                     <div class="text__image">
-                        <img src="<?= get_theme_file_uri() . '/assets/images/pexels-erik-mclean-7629183.jpg' ?>">
+                        <?php if ($front_page_image_id) {
+                            echo wp_get_attachment_image($front_page_image_id, "100%");
+                        } ?>
                     </div>
                 </div>
                 <div class="main-container__right">
-                    <div class="text__box">
+                    <div class="text__box" id="about-us-text">
                         <h5 class="box__section custom-font font-lighter">ABOUT US</h5>
-
-                        <h2 class="box__title custom-font"> Welcome to Rent-A-<span class="blue">Vroom</span></h2>
+                        <h2 class="box__title custom-font"> Welcome to <?php bloginfo('name'); ?>
+                        </h2>
                         <br>
-                        <p class="box__para custom-font"> Malta's Mediterranean gem. <strong>Rent-A-<span class="blue">Vroom</span> </strong> your Maltese adventure. Explore in style with our well-maintained fleet and discover paradise around every bend</p>
+                        <p class="box__para custom-font"> <?php echo $top_about_paragraph ?></p>
                         <br>
-                        <p class="box__para custom-font">Welcome to our sports car rental company, where <span class="blue"><strong>speed</strong></span>, style, and exhilaration unite. Our fleet boasts a selection of high-performance vehicles, from sleek roadsters to <span class="blue"><strong>powerful</strong></span> supercars. Whether it's a special occasion or simply a desire for <span class="blue"><strong>thrill</strong></span>, we put you in the driver's seat of your dream ride. Experience the rush of the open road as you command these precision-<span class="blue"><strong>engineered</strong></span> machines. Your journey begins with us, where every mile is a symphony of power and <span class="blue"><strong>luxury</strong></span></p>
+                        <p class="box__para custom-font">
+                            <?php echo $bottom_about_paragraph ?>
+                        </p>
                         <br>
                         <br>
                         <button class="custom-font about-btn">Search Vehicles</button>
@@ -156,26 +183,7 @@
             <h2 class="custom-font main-heading ">Exclusive Services</h2>
         </div>
         <div class="container">
-            <div class="service-container">
-                <div class="services__logo">logo</div>
-                <div class="services__title custom-font">title</div>
-                <div class="services__para custom-font font-lighter">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate illum provident asperiores modi, facere quasi veniam, ut explicabo et voluptates, at doloribus! Culpa, velit veritatis.</div>
-            </div>
-            <div class="service-container">
-                <div class="services__logo">logo</div>
-                <div class="services__title custom-font">title</div>
-                <div class="services__para custom-font font-lighter">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate illum provident asperiores modi, facere quasi veniam, ut explicabo et voluptates, at doloribus! Culpa, velit veritatis.</div>
-            </div>
-            <div class="service-container">
-                <div class="services__logo">logo</div>
-                <div class="services__title custom-font">title</div>
-                <div class="services__para custom-font font-lighter">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate illum provident asperiores modi, facere quasi veniam, ut explicabo et voluptates, at doloribus! Culpa, velit veritatis.</div>
-            </div>
-            <div class="service-container">
-                <div class="services__logo">logo</div>
-                <div class="services__title custom-font">title</div>
-                <div class="services__para custom-font font-lighter">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate illum provident asperiores modi, facere quasi veniam, ut explicabo et voluptates, at doloribus! Culpa, velit veritatis.</div>
-            </div>
+            <?php get_template_part("/template-parts/services") ?>
         </div>
     </section>
     <!-- End Services Section -->
@@ -183,9 +191,11 @@
     <!-- Image heading to (*) make dynamic (*) AND ANIMATE-->
     <div class="image-container">
         <div class="left-slanting-line-img" style="position:absolute;left:-800px;top:-100px;"></div>
-        <img src="<?= get_theme_file_uri() ?>/assets/images/pexels-mike-bird-2365572.jpg">
+        <?php if ($mid_page_img) {
+            echo wp_get_attachment_image($mid_page_img, "100%");
+        } ?>
 
-        <h2 class="center-image__heading custom-font">Join Malta's Exclusive Rental
+        <h2 class="center-image__heading custom-font"><?= $mid_page_image_paragraph ?>
             <br> <button class="heading-button">Join Now</button>
         </h2>
     </div>

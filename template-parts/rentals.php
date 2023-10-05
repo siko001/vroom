@@ -43,9 +43,11 @@ if ($query->have_posts()) :
             </div>
         </div>
 
+
 <?php
 
     endwhile;
+    
     wp_reset_postdata(); // Reset the query
 else :
     echo 'No Rentals Avaliable.';
