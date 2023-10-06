@@ -3,6 +3,9 @@
 // Content for the header
 $header_text = get_theme_mod("page_header");
 
+//Video Link
+$video_link = get_theme_mod("video_link");
+
 $front_page_image_id = get_theme_mod('about_section_image');
 $mid_page_img = get_theme_mod("mid_page_image");
 
@@ -34,7 +37,8 @@ $mid_page_image_paragraph = do_shortcode($mid_page_image_paragraph);
             </p>
             <br>
             <div class="video">
-                <div class="play-btn"><i class="fa-solid fa-play"></i></div>
+                <div class="play-btn"><i class="fa-solid fa-play"></i>
+                </div>
                 <div class="text">
                     <span class="line"></span>
                     <div class="custom-font">
@@ -176,7 +180,7 @@ $mid_page_image_paragraph = do_shortcode($mid_page_image_paragraph);
     </section>
     <!-- End About Us Section -->
 
-    <!-- Services Section  to (*) make dynamic (*) AND ANIMATE-->
+    <!-- Services Section -->
     <section id="services">
         <div class="section__heading">
             <h4 class="custom-font mini-heading">Services</h4>
@@ -188,7 +192,7 @@ $mid_page_image_paragraph = do_shortcode($mid_page_image_paragraph);
     </section>
     <!-- End Services Section -->
 
-    <!-- Image heading to (*) make dynamic (*) AND ANIMATE-->
+    <!-- Image heading -->
     <div class="image-container">
         <div class="left-slanting-line-img" style="position:absolute;left:-800px;top:-100px;"></div>
         <?php if ($mid_page_img) {
@@ -202,7 +206,7 @@ $mid_page_image_paragraph = do_shortcode($mid_page_image_paragraph);
     <!-- Image heading end -->
 
 
-    <!-- Testimonials To (*)Make Dynamic (*) AND ANIMATE -->
+    <!-- Testimonials To (*)Make Dynamic (*)  -->
     <section id="testimonials">
         <div class="section__heading">
             <h4 class="custom-font mini-heading">Testimonials</h4>
@@ -249,8 +253,9 @@ $mid_page_image_paragraph = do_shortcode($mid_page_image_paragraph);
             </div>
         </div>
     </section>
+    <!-- End Tesimonials -->
 
-    <!-- Start Blog to (*)MAKE DYNAMIC (*) AND ANIMATE -->
+    <!-- Start Blog to (*)MAKE DYNAMIC (*)  -->
     <section id="blog">
         <div class="section__heading">
             <h4 class="custom-font mini-heading">Blog</h4>
@@ -297,13 +302,16 @@ $mid_page_image_paragraph = do_shortcode($mid_page_image_paragraph);
             </div>
         </div>
     </section>
-
+    <!-- End blog -->
+    <div id="number-start">
+    </div>
+    <!-- Numbers start -->
     <section id="numbers">
         <div class="container">
             <div class="background">
                 <div class="left__background">
                     <div class="number__container custom-font">
-                        <div class="number blue">20</div>
+                        <div class="number blue"></div>
                         <div class="number__text font-light">
                             Luxurious
                             Sports-Cars
@@ -312,32 +320,42 @@ $mid_page_image_paragraph = do_shortcode($mid_page_image_paragraph);
                 </div>
                 <div class="right__background">
                     <div class="number__container custom-font">
-                        <div class="number blue">100+</div>
+                        <div class="number blue"></div>
                         <div class="number__text font-light">
                             Pick-Ups
                             Drop-offs
                         </div>
                     </div>
                     <div class="number__container custom-font">
-                        <div class="number blue">10</div>
+                        <div class="number blue"></div>
                         <div class="number__text font-light">
                             Exclusive
                             Personal
                         </div>
                     </div>
                     <div class="number__container custom-font">
-                        <div class="number blue">50+</div>
+                        <div class="number blue"></div>
                         <div class="number__text font-light">
                             Upgrades
                             Avaliable
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
     </section>
 </main>
+
+
+<div class="vimeo-shadowbox vimeo-shadowbox--hidden">
+    <div class="vimeo-shadowbox__video-wrapper">
+        <div class="vimeo-shadowbox__video">
+            <iframe src="<?= $video_link ?>" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+        </div>
+        <a class="vimeo-shadowbox__close-button" href="#">Close</a>
+    </div>
+</div>
+
 
 
 <?php get_footer() ?>
