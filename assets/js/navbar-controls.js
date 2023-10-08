@@ -1,6 +1,5 @@
 jQuery(document).ready(function ($) {
-	//Give the navbar the active color
-
+	// Function to set the active link and add fragment identifier to the URL
 	function setActiveNavLink() {
 		const url = window.location.href;
 		const fragmentIdentifier = url.split('#')[1];
@@ -16,26 +15,38 @@ jQuery(document).ready(function ($) {
 	}
 
 	// Call the function to set the active link on page load
-	$(document).ready(function () {
+	setActiveNavLink();
+
+	// Smooth scroll when clicking on navigation links
+	$('a[href^="#"]').click(function (e) {
+		e.preventDefault();
+
+		const targetId = $(this).attr('href'); // Get the href attribute
+		const $target = $(targetId); // Select the target element
+
+		if ($target.length) {
+			$('html, body').animate(
+				{
+					scrollTop: $target.offset().top,
+				},
+				1000
+			); // Adjust the duration as needed
+		}
+
+		// Update the URL with the fragment identifier
+		history.pushState(null, null, targetId);
+
+		// Set the active navigation link
 		setActiveNavLink();
 	});
 
-	// Listen to changes in the URL hash (e.g., when the user clicks on a link with a fragment identifier)
-	window.addEventListener('hashchange', setActiveNavLink);
-
 	// Open the overlay
 	$('.mobile-nav__menu').click(() => {
-		if (!$('.overlay').hasClass('active')) {
-			$('.overlay').addClass('active');
-		} else {
-			$('.overlay').removeClass('active');
-		}
+		$('.overlay').toggleClass('active');
 	});
 
-	// Close The overlay
+	// Close the overlay
 	$('.navbar__close').click(() => {
-		if ($('.overlay').hasClass('active')) {
-			$('.overlay').removeClass('active');
-		}
+		$('.overlay').removeClass('active');
 	});
 });

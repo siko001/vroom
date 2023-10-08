@@ -72,7 +72,19 @@ function custom_things($wp_customize) {
     // Add Page Header Title
     add_textarea_customizer_control($wp_customize, 'front_page', 'page_header', 'Page Header Title');
     //video links
-    add_textarea_customizer_control($wp_customize, 'front_page', 'video_link', 'Video Link');
+    add_textarea_customizer_control(
+        $wp_customize,
+        'front_page',
+        'video_link',
+        'Video Link  &emsp; &emsp; &<e></e>msp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;  -----
+        (Other links to try) -----  &emsp; &emsp;
+        link 1
+        https://player.vimeo.com/video/871797777
+        link2
+        https://player.vimeo.com/video/871788593
+        link3
+        https://player.vimeo.com/video/871798847'
+    );
     // Add About Section Top Paragraph
     add_textarea_customizer_control($wp_customize, 'front_page', 'about_section_top_paragraph', 'About Section Top Paragraph');
     // Add About Section Bottom Paragraph

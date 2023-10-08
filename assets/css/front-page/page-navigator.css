@@ -1,0 +1,29 @@
+.page-navigator {
+	width: 100%;
+	height: 50px;
+	background-color: white;
+	color: black;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 9999;
+	opacity: 1;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 5px 2rem;
+}
+
+.page-navigator ul {
+	display: flex;
+	gap: 20px;
+	list-style: none;
+}
+.page-navigator a {
+	color: black;
+}
+
+.page-navigator a:hover {
+	color: #1089ff;
+	transition: 0.2s;
+}

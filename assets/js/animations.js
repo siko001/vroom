@@ -2,6 +2,10 @@
 const container = document.querySelector('.navbar__menu');
 const navLinks = container.querySelectorAll('.menu-item a');
 
+//main page navigator
+const navigator = document.getElementsByClassName('page-navigator');
+const formSection = document.getElementById('main-nav-stop');
+
 //heading Form and header
 const form = document.getElementById('form-container');
 const headerText = document.getElementById('header-text');
@@ -26,7 +30,7 @@ const numberSection = document.getElementById('numbers');
 //initialise numbers played(numbers section)
 let numbersAnimationPlayed = false; // Flag to track if the numbers animation has played
 const targetValues = [20, 100, 10, 50]; //final values for the numbers
-//creat the limeline
+//create the limeline
 const tl = gsap.timeline();
 
 // Set the initial positions for the animations
@@ -35,6 +39,7 @@ gsap.set(headerText, { y: -400, opacity: 0 });
 gsap.set(navLogo, { x: -300, opacity: 0 });
 gsap.set(rentalCarousel, { y: 300, opacity: 0 });
 gsap.set(aboutText, { opacity: 0 });
+gsap.set(navigator, { opacity: 0, y: -100 });
 
 // Animations to be played together in the header
 const initialAnimations = [
@@ -73,13 +78,18 @@ function isInViewport(element) {
 
 // Function to handle section animations by section
 function handleSectionAnimations() {
-	if (isInViewport(aboutUs) || isInViewport(rentals) || isInViewport(rentalCarousel)) {
-		gsap.to(rentalCarousel, { duration: 1.5, y: 0, ease: 'power2.out', opacity: 1 });
+	if (isInViewport(formSection)) {
+		gsap.to(navigator, { duration: 1, y: '-100px', opacity: 0, ease: 'power2.out' });
 	}
-	if (isInViewport(serviceSection) || isInViewport(aboutUs) || isInViewport(aboutText)) {
+	if (isInViewport(aboutUs) || isInViewport(rentals) || isInViewport(rentalCarousel) || isInViewport(numberSection)) {
+		gsap.to(rentalCarousel, { duration: 1.5, y: 0, ease: 'power2.out', opacity: 1 });
+		gsap.to(navigator, { duration: 1, y: 0, opacity: 1, ease: 'power2.out' });
+	}
+	if (isInViewport(serviceSection) || isInViewport(aboutUs) || isInViewport(aboutText) || isInViewport(numberSection)) {
 		gsap.to(aboutText, { duration: 1.5, opacity: 1 });
 	}
 	if (isInViewport(serviceSection) || isInViewport(services)) {
+		gsap.to(navigator, { duration: 1, y: 0, opacity: 1, ease: 'power2.out' });
 		services.forEach((container, index) => {
 			const animation = gsap.timeline();
 			animation.to(container, {
@@ -92,8 +102,7 @@ function handleSectionAnimations() {
 	}
 
 	if (isInViewport(numberSection) && !numbersAnimationPlayed) {
-		console.log('number');
-
+		gsap.to(navigator, { duration: 1, y: 0, opacity: 1, ease: 'power2.out' });
 		// Animate each number separately
 		numberContainers.forEach((container, index) => {
 			const targetValue = targetValues[index]; // Get the target value for this number

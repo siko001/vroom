@@ -4,12 +4,14 @@
 <head>
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <?php wp_head(); ?>
 </head>
 
 <body>
     <nav>
-        <div class="navbar">
+        <div class="navbar" style="background-color:<?= (is_home() || is_page_template('home-template.php')) ? '' : 'black' ?>">
+
             <div id="nav-logo" class="navbar__logo">
                 <?php
                 $custom_logo_id = get_theme_mod("custom_logo");
@@ -22,13 +24,30 @@
                 ?>
             </div>
             <div class="navbar__menu custom-font">
-                <?php wp_nav_menu(array(
-                    'theme_location' => 'Main menu', // Use the registered location name
-                    'menu_class' => 'navbar__menu', // Use the custom class 'navbar__menu'
-                )); ?>
+                <?php if (is_home()) {
+                    wp_nav_menu(array(
+                        'theme_location' => 'Main menu',
+                        'menu_class' => 'navbar__menu',
+                    ));
+                } elseif (is_page_template('home-template.php')) {
+                    // Replace 'custom-home-template.php' with the actual template file name
+                    wp_nav_menu(array(
+                        'theme_location' => 'Main menu',
+                        'menu_class' => 'navbar__menu',
+                    ));
+                } else {
+                    wp_nav_menu(array(
+                        'theme_location' => 'Page Menu',
+
+                    ));
+                } ?>
             </div>
             <div class="mobile-nav__menu ">
                 <i class="fa-solid fa-bars"></i>
             </div>
         </div>
     </nav>
+    <div class="page-navigator custom-font">
+        <div><a href="#home">Back To Top</a> </div>
+        <div><?php echo wp_nav_menu(array('theme_location' => 'Page Menu',)) ?></div>
+    </div>

@@ -1,4 +1,4 @@
-<footer>
+<footer id="contact">
     <div class="footer__main">
         <div class="footer__upper custom-font">
             <div class="footer__upper-container">
@@ -106,10 +106,16 @@
     <hr width=70%>
     <br>
     <div class="navbar__menu custom-font">
-        <?php wp_nav_menu(array(
-            'theme_location' => 'Main menu',
-            'menu_class' => 'navbar__menu',
-        )); ?>
+        <?php
+        if (is_home()) {
+            wp_nav_menu(array(
+                'theme_location' => 'Main menu',
+                'menu_class' => 'navbar__menu',
+            ));
+        } else {
+            wp_nav_menu(array('theme_location' => 'Page Menu', 'menu_class' => 'navbar__menu',));
+        }
+        ?>
     </div>
     <br>
     <hr width=25%>

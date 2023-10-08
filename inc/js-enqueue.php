@@ -29,5 +29,11 @@ function rentAVroom_register_scripts() {
 
     //vimeo API CDN
     wp_enqueue_script("vimeo API", "https://player.vimeo.com/api/player.js", array(), "1.0", true);
+
+    //reservation form 
+    wp_enqueue_script("form_submition", get_template_directory_uri() . "/assets/js/reservation-form.js", array(), "1.0", true);
+
+    //single-rental
+    wp_enqueue_script("single-rental-js", get_template_directory_uri() . "/assets/js/single-rental-functions.js", array(), "1.0", true);
 }
 add_action("wp_enqueue_scripts", "rentAVroom_register_scripts");

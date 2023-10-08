@@ -37,8 +37,8 @@ if ($query->have_posts()) :
                 </div>
                 <br>
                 <div class="item__group">
-                    <button class="group__button-left">Book now</button>
-                    <button class="group__button-right">Details</button>
+                    <a href="<?= $link ?>" class="group__button-left">Book now</a>
+                    <a href="<?= $link ?>" class="group__button-right">Details</a>
                 </div>
             </div>
         </div>
@@ -47,7 +47,7 @@ if ($query->have_posts()) :
 <?php
 
     endwhile;
-    
+
     wp_reset_postdata(); // Reset the query
 else :
     echo 'No Rentals Avaliable.';

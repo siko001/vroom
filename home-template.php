@@ -1,6 +1,6 @@
 <?php get_header();
 
-
+// Template Name: Home Template
 
 include_once get_template_directory() . "/inc/homepage-variables.php";
 

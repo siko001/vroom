@@ -17,7 +17,14 @@ function rentAVroom_register_styles() {
     wp_enqueue_style("blog_style", get_theme_file_uri() . "/assets/css/front-page/blog.css");
     wp_enqueue_style("footer_style", get_theme_file_uri() . "/assets/css/front-page/footer.css");
     wp_enqueue_style("video_style", get_theme_file_uri() . "/assets/css/front-page/video.css");
+    wp_enqueue_style("page-navigator_style", get_theme_file_uri() . "/assets/css/front-page/page-navigator.css");
+
     // End Front page css imports -------------------------
+
+
+    // Singles
+    wp_enqueue_style("single-rental_style", get_theme_file_uri() . "/assets/css/single-page/single-rental.css");
+
 
     //Font Package
     wp_enqueue_style("font_import", "https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&amp;display=swap");

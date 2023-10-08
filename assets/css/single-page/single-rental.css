@@ -1,0 +1,55 @@
+.single-rental {
+	margin: 2rem 0;
+	width: 100%;
+	height: 100%;
+}
+
+.single-rental .item {
+	margin: 0 auto;
+	width: 60%;
+}
+
+.single-rental .item .item__image {
+	height: 400px;
+}
+
+.single-rental .item .item__image img {
+	height: 100%;
+}
+
+.booking-overlay,
+.details-overlay {
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.7);
+	position: fixed !important;
+	top: 0;
+	left: 0;
+	display: none;
+	place-items: center;
+}
+
+.booked-car {
+	position: relative;
+	width: 50%;
+	height: 10%;
+	background-color: aliceblue;
+	display: grid;
+	place-items: center;
+}
+
+.booking-overlay button,
+.details-overlay button {
+	position: absolute;
+	right: 20px;
+}
+
+.show {
+	display: grid;
+}
+
+.close-btn {
+	font-family: 'poppins', 'sans-serif';
+	color: #000;
+	padding: 2px 5px;
+}
