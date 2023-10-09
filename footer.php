@@ -113,7 +113,7 @@
                 'menu_class' => 'navbar__menu',
             ));
         } else {
-            wp_nav_menu(array('theme_location' => 'Page Menu', 'menu_class' => 'navbar__menu',));
+            wp_nav_menu(array('theme_location' => 'Whole Website', 'menu_class' => 'navbar__menu',));
         }
         ?>
     </div>

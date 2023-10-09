@@ -23,9 +23,18 @@ const aboutText = document.getElementById('about-us-text');
 const serviceSection = document.getElementById('services');
 const services = document.querySelectorAll('.service-container');
 
+//testimonials selector
+const tesimonialSection = document.getElementById('testimonials');
+
+//blog selector
+const blogSection = document.getElementById('blog');
+
 //numbers
 const numberContainers = document.querySelectorAll('.number');
 const numberSection = document.getElementById('numbers');
+
+//footer
+const footer = document.getElementById('contact');
 
 //initialise numbers played(numbers section)
 let numbersAnimationPlayed = false; // Flag to track if the numbers animation has played
@@ -126,6 +135,10 @@ function handleSectionAnimations() {
 			);
 		});
 		numbersAnimationPlayed = true; // Set the flag to indicate that the animation has played
+	}
+
+	if (isInViewport(blog) || isInViewport(footer) || isInViewport(tesimonialSection)) {
+		gsap.to(navigator, { duration: 1, y: 0, opacity: 1, ease: 'power2.out' });
 	}
 }
 

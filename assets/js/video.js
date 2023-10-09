@@ -1,52 +1,44 @@
 document.addEventListener('DOMContentLoaded', function () {
-	// Select your Vimeo video element using its iframe
-	let iframe = document.querySelector('iframe');
-
-	// Create a Vimeo Player instance
-	let player = new Vimeo.Player(iframe);
-
-	// Select your play button, shadowbox, and close button
-	let link = document.querySelector('.play-btn');
+	let link = document.getElementById('play-btn-id');
 	let shadowbox = document.querySelector('.vimeo-shadowbox');
 	let closeButton = document.querySelector('.vimeo-shadowbox__close-button');
 
-	// Add an event listener for when the video ends
-	player.on('ended', function () {
-		hidePopup();
-	});
-
-	// Add an event listener for when the play button is clicked
 	link.addEventListener('click', function (event) {
 		event.preventDefault(); // Prevent the default behavior of the link
 		showPopup();
 	});
-
-	// Add an event listener for when the shadowbox background is clicked
-	shadowbox.addEventListener('click', function (event) {
-		if (event.target === shadowbox) {
-			hidePopup();
-		}
-	});
-
-	// Add an event listener for when the close button is clicked
 	closeButton.addEventListener('click', function (event) {
 		event.preventDefault(); // Prevent the default behavior of the link
 		hidePopup();
 	});
 
-	// Function to show the video popup
+	function hidePopup() {
+		shadowbox.classList.add('vimeo-shadowbox--hidden');
+	}
+
+	// 	// Function to show the video popup
 	function showPopup() {
-		player.play().catch(function (error) {
-			console.error('Error playing the video:', error);
-		});
 		shadowbox.classList.remove('vimeo-shadowbox--hidden');
 	}
 
-	// Function to hide the video popup
-	function hidePopup() {
-		player.pause().catch(function (error) {
-			console.error('Error pausing the video:', error);
+	fetch('https://vimeo.com/api/oembed.json?url=https://player.vimeo.com/video/871797777')
+		.then((response) => {
+			if (!response.ok) {
+				throw new Error('Network response was not ok');
+			}
+			return response.json(); // Parse the JSON response
+		})
+		.then((data) => {
+			let videoHtml = data.html;
+
+			// Extract the src attribute from the video HTML
+			const parser = new DOMParser();
+			const doc = parser.parseFromString(videoHtml, 'text/html');
+			const iframeElement = doc.querySelector('iframe');
+			const iframeSrc = iframeElement.getAttribute('src');
+		})
+		.catch((error) => {
+			// Handle any errors that occurred during the fetch or processing of the response
+			console.error('There was a problem with the fetch operation:', error);
 		});
-		shadowbox.classList.add('vimeo-shadowbox--hidden');
-	}
 });

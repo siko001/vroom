@@ -3,8 +3,9 @@
 // Custom Theme supports
 include_once get_template_directory() . "/inc/custom-theme-options.php";
 
-// Custom Fields inside the Customizer sections
+// Custom Fields inside the Customizer
 include_once get_template_directory() . "/inc/customizer-fields.php";
+
 
 // Css Enqueues
 include_once get_template_directory() . "/inc/css-enqueue.php";

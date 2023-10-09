@@ -18,7 +18,7 @@ include_once get_template_directory() . "/inc/homepage-variables.php";
                 <?= $top_about_paragraph  ?>
             </p>
             <br>
-            <div class="video">
+            <div id="play-btn-id" class="video">
                 <div class="play-btn"><i class="fa-solid fa-play"></i>
                 </div>
                 <div class="text">
@@ -117,6 +117,7 @@ include_once get_template_directory() . "/inc/homepage-variables.php";
         </div>
         <div id="carousel-container" class="carousel-container">
             <div class="owl-carousel owl-theme">
+
                 <?php get_template_part("/template-parts/rentals") ?>
             </div>
         </div>
@@ -172,6 +173,7 @@ include_once get_template_directory() . "/inc/homepage-variables.php";
             <h2 class="custom-font main-heading ">Exclusive Services</h2>
         </div>
         <div class="container">
+
             <?php get_template_part("/template-parts/services") ?>
         </div>
     </section>
@@ -207,7 +209,7 @@ include_once get_template_directory() . "/inc/homepage-variables.php";
     </section>
     <!-- End Tesimonials -->
 
-    <!-- Start Blog to (*)MAKE DYNAMIC (*)  -->
+    <!-- Start Blog   -->
     <section id="blog">
         <div class="section__heading">
             <h4 class="custom-font mini-heading">Blog</h4>
@@ -215,43 +217,7 @@ include_once get_template_directory() . "/inc/homepage-variables.php";
         </div>
 
         <div class="blog__container">
-            <div class="blog__post">
-                <div class="post__img">
-                    <img src="<?php echo get_theme_file_uri() ?>/assets/images/pexels-mike-bird-2365572.jpg" alt="">
-                </div>
-                <div class="post__info custom-font blue">
-                    <div>date</div>
-                    <div><i class="fa-regular fa-message"></i> Commenter</div>
-                </div>
-                <div class="post__title custom-font ">Why Lead Generation is Key for Business Growth</div>
-                <div class="post__link">
-                    <button>Read More</button>
-                </div>
-            </div>
-            <div class="blog__post">
-                <div class="post__img">
-                    <img src="<?php echo get_theme_file_uri() ?>/assets/images/pexels-erik-mclean-7629183.jpg" alt="">
-                </div>
-                <div class="post__info custom-font blue">
-                    <div>date</div>
-                    <div><i class="fa-regular fa-message"></i> Commenter</div>
-                </div>
-                <div class="post__title custom-font ">Why Lead Generation is Key for Business Growth</div>
-                <div class="post__link">
-                    <button>Read More</button>
-                </div>
-            </div>
-            <div class="blog__post">
-                <div class="post__img"><img src="<?php echo get_theme_file_uri() ?>/assets/images/pexels-mike-bird-2365572.jpg" alt=""></div>
-                <div class="post__info custom-font blue">
-                    <div>date</div>
-                    <div><i class="fa-regular fa-message"></i> Commenter</div>
-                </div>
-                <div class="post__title custom-font ">Why Lead Generation is Key for Business Growth</div>
-                <div class="post__link custom-font">
-                    <button>Read More</button>
-                </div>
-            </div>
+            <?php get_template_part("template-parts/blog")  ?>
         </div>
     </section>
     <!-- End blog -->

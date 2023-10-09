@@ -18,20 +18,24 @@ function rentAVroom_register_scripts() {
     //my custom carosel controls
     wp_enqueue_script("Carosuel control", get_theme_file_uri() . "/assets/js/carousel.js", array("jquery", "owl Carosel Code"), "1.0",  true);
 
-    //GSAP Animation JS 
-    wp_enqueue_script("gsap animation", get_template_directory_uri() . "/assets/js/animations.js", array("gsap_cdn"), "1.0",  true);
+    if (is_home()) {
 
-    //Gsap CDN
-    wp_enqueue_script('gsap_cdn', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js', array(), '', true);
+        //GSAP Animation JS 
+        wp_enqueue_script("gsap animation", get_template_directory_uri() . "/assets/js/animations.js", array("gsap_cdn"), "1.0",  true);
 
-    //Vimeo js
-    wp_enqueue_script("video js", get_template_directory_uri() . "/assets/js/video.js", array("vimeo API"), "1.0",  true);
+        //Gsap CDN
+        wp_enqueue_script('gsap_cdn', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js', array(), '', true);
 
-    //vimeo API CDN
-    wp_enqueue_script("vimeo API", "https://player.vimeo.com/api/player.js", array(), "1.0", true);
 
-    //reservation form 
-    wp_enqueue_script("form_submition", get_template_directory_uri() . "/assets/js/reservation-form.js", array(), "1.0", true);
+        //Vimeo js
+        wp_enqueue_script("video js", get_template_directory_uri() . "/assets/js/video.js", array(), "1.0",  true);
+
+
+        //reservation form 
+        wp_enqueue_script("form_submition", get_template_directory_uri() . "/assets/js/reservation-form.js", array(), "1.0", true);
+    }
+
+
 
     //single-rental
     wp_enqueue_script("single-rental-js", get_template_directory_uri() . "/assets/js/single-rental-functions.js", array(), "1.0", true);

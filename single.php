@@ -1,22 +1,33 @@
-<?
-
+<?php
 get_header(); // Include your theme's header.
 
 while (have_posts()) : the_post();
+    $featured_image = get_the_post_thumbnail($post); // 'thumbnail' is the image size name
 ?>
+    <br>
+    <br>
+    <div class="blog__container single-blog">
+        <div class="blog__post">
+            <div class="post__img">
+                <?php echo $featured_image; ?>
+            </div>
+            <div class="post__info custom-font blue">
+                <div><?php echo get_the_date(); ?></div>
+                <div><i class="fa-regular fa-message"></i> <?php the_author(); ?></div>
+            </div>
 
-    <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-        <h2><?php the_title(); ?></h2>
-        <div class="post-content">
-            <?php the_content(); ?>
-        </div>
-        <div class="post-meta">
-            Author: <?php the_author(); ?> | Date: <?php the_date(); ?>
-        </div>
-    </article>
 
-<?php
-endwhile;
+            <div class="post__title custom-font "><?php the_content() ?></div>
+        </div>
+    </div>
+
+
+<?php endwhile;
 
 get_footer(); // Include your theme's footer.
 ?>
+
+
+<!-- 
+   
+ -->

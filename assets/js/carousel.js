@@ -7,11 +7,11 @@ jQuery(document).ready(function ($) {
 		autoplayTimeout: 2500, //auto play speed
 		autoplayHoverPause: true, //on hover stop
 		responsive: {
-			1000: {
-				items: 3, //1000+
-			},
 			100: {
 				items: 1, //100px-1000px
+			},
+			1300: {
+				items: 3, //1000+
 			},
 		},
 	});

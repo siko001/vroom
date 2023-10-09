@@ -37,7 +37,8 @@
                     ));
                 } else {
                     wp_nav_menu(array(
-                        'theme_location' => 'Page Menu',
+                        'theme_location' => 'Whole Website',
+                        'menu_class' => 'navbar__menu',
 
                     ));
                 } ?>
@@ -49,5 +50,5 @@
     </nav>
     <div class="page-navigator custom-font">
         <div><a href="#home">Back To Top</a> </div>
-        <div><?php echo wp_nav_menu(array('theme_location' => 'Page Menu',)) ?></div>
+        <div><?php echo wp_nav_menu(array('theme_location' => 'Whole Website',)) ?></div>
     </div>

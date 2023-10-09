@@ -1,25 +1,34 @@
 .page-navigator {
 	width: 100%;
-	height: 50px;
+	opacity: 0;
+	height: auto;
 	background-color: white;
 	color: black;
 	position: fixed;
 	top: 0;
 	left: 0;
 	z-index: 9999;
-	opacity: 1;
+
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+	text-align: center;
 	padding: 5px 2rem;
 }
 
 .page-navigator ul {
+	justify-content: center;
+	align-items: center;
+	text-align: center;
 	display: flex;
 	gap: 20px;
 	list-style: none;
 }
 .page-navigator a {
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	display: flex;
 	color: black;
 }
 

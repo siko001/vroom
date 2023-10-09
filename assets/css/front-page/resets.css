@@ -182,3 +182,38 @@ a {
 .current_page_item a {
 	color: #01d28e;
 }
+
+.comment {
+	background-color: #ffffff;
+	color: black;
+	margin: 25px 0;
+	padding: 10px;
+	display: flex;
+}
+
+.wp-block-comment-content p {
+	width: 80%;
+}
+.comment a {
+	color: #01d28e;
+}
+
+.heading {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	margin: 50px 0 20px 0;
+}
+
+.heading h1 {
+	text-decoration: underline;
+}
+
+.object-container {
+	padding: 50px;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	text-align: center;
+	gap: 20px;
+}
